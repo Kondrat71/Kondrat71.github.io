@@ -1,11 +1,11 @@
 <!doctype html><html lang="en"><head><title>Connect TikTok</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;color:#222}h1{font-size:1.6rem}a{color:#5834ff}button{font:inherit;padding:12px 22px;border:0;border-radius:8px;background:#fe2c55;color:#fff;cursor:pointer}</style></head><body>
 <h1>Connect your TikTok account</h1>
-<p>This app publishes short videos you have created to <b>your own</b> TikTok account. It requests: <b>user.info.basic</b> (to show which account is connected) and <b>video.publish</b> (to post videos you approve). <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+<p>This app publishes short videos you have created to <b>your own</b> TikTok account. It requests: <b>user.info.basic</b> (to show which account is connected) and <b>video.publish</b> (to post videos you approve) and <b>video.upload</b> (to send videos to your TikTok drafts). <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
 <p><button id="b">Connect TikTok</button></p>
 <script>
 var CLIENT_KEY="sbawq8c83hy7086lbz";
 document.getElementById('b').onclick=function(){
- var q=new URLSearchParams({client_key:CLIENT_KEY,scope:"user.info.basic,video.publish",response_type:"code",
+ var q=new URLSearchParams({client_key:CLIENT_KEY,scope:"user.info.basic,video.publish,video.upload",response_type:"code",
   redirect_uri:"https://kondrat71.github.io/callback.html",state:"demo"});
  location.href="https://www.tiktok.com/v2/auth/authorize/?"+q;
 };
