@@ -3,7 +3,7 @@
 <p>This app publishes short videos you have created to <b>your own</b> TikTok account. It requests: <b>user.info.basic</b> (to show which account is connected) and <b>video.publish</b> (to post videos you approve). <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
 <p><button id="b">Connect TikTok</button></p>
 <script>
-var CLIENT_KEY="__CLIENT_KEY__";
+var CLIENT_KEY="sbawq8c83hy7086lbz";
 document.getElementById('b').onclick=function(){
  var q=new URLSearchParams({client_key:CLIENT_KEY,scope:"user.info.basic,video.publish",response_type:"code",
   redirect_uri:"https://kondrat71.github.io/callback.html",state:"demo"});
