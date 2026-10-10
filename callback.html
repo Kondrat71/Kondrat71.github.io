@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><title>Authorization</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;color:#222}h1{font-size:1.6rem}a{color:#5834ff}</style></head><body>
+<h1>Authorization result</h1><p id="r">Waiting…</p>
+<script>
+var p=new URLSearchParams(location.search);
+document.getElementById('r').textContent = p.get('code') ? 'Code: '+p.get('code') : (p.get('error') ? 'Error: '+p.get('error') : 'No code in URL');
+</script></body></html>
