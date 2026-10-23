@@ -1,4 +1,4 @@
-# Скачивает длинные истории с Reddit (с вашего интернета) в файл stories.json на рабочем столе.
+# Downloads long Reddit stories to stories.json on the Desktop.
 $ErrorActionPreference = "Continue"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $subs = "AmItheAsshole","tifu","MaliciousCompliance","pettyrevenge","ProRevenge","entitledparents","TrueOffMyChest","relationship_advice"
@@ -20,9 +20,9 @@ foreach ($s in $subs) {
           url = "https://www.reddit.com" + $d.permalink; nsfw = $false
         }
       }
-      Write-Host "r/$s ($t): ok, всего $($out.Count)"
+      Write-Host "r/$s ($t): ok, total $($out.Count)"
     } catch {
-      Write-Host "r/$s ($t): ошибка $($_.Exception.Message)"
+      Write-Host "r/$s ($t): error $($_.Exception.Message)"
     }
     Start-Sleep -Seconds 3
   }
@@ -30,4 +30,4 @@ foreach ($s in $subs) {
 $path = Join-Path ([Environment]::GetFolderPath("Desktop")) "stories.json"
 $json = ConvertTo-Json -InputObject @($out.Values) -Depth 4
 [IO.File]::WriteAllText($path, $json, (New-Object Text.UTF8Encoding $false))
-Write-Host "Готово: $($out.Count) историй. Файл: $path"
+Write-Host "Done: $($out.Count) stories. File: $path"
